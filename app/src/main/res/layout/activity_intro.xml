@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context="com.ddt.incubator.ui.introscreen.IntroActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/circleIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="#BFD0CD"
+        android:foregroundTint="@android:color/black" />
+
+    <Button
+        android:id="@+id/btn_start_app"
+        android:layout_width="245dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/circleIndicator"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:alpha="0"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#FFFFFF"
+        android:padding="10dp"
+        android:text="@string/intro_button_next"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

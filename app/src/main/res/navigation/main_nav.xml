@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/habitList">
+
+    <fragment
+        android:id="@+id/habitList"
+        android:name="com.ddt.incubator.ui.fragments.habitlist.HabitList"
+        android:label="Incubator"
+        tools:layout="@layout/fragment_habit_list" >
+        <action
+            android:id="@+id/action_habitList_to_createHabitItem"
+            app:destination="@id/createHabitItem" />
+        <action
+            android:id="@+id/action_habitList_to_createHabitItem2"
+            app:destination="@id/createHabitItem" />
+        <action
+            android:id="@+id/action_habitList_to_markingHabit"
+            app:destination="@id/markingHabit" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateHabitItem"
+        android:name="com.ddt.incubator.ui.fragments.updatehabit.UpdateHabitItem"
+        android:label="Update habit"
+        tools:layout="@layout/fragment_update_habit_item" >
+        <argument
+            android:name="selectedHabit"
+            app:argType="com.ddt.incubator.data.models.Habit" />
+        <action
+            android:id="@+id/action_updateHabitItem_to_markingHabit"
+            app:destination="@id/markingHabit" />
+        <action
+            android:id="@+id/action_updateHabitItem_to_habitList"
+            app:destination="@id/habitList"
+            app:exitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/createHabitItem"
+        android:name="com.ddt.incubator.ui.fragments.createhabit.CreateHabitItem"
+        android:label="Create a new habit"
+        tools:layout="@layout/fragment_create_habit_item" >
+        <action
+            android:id="@+id/action_createHabitItem_to_habitList"
+            app:destination="@id/habitList" />
+    </fragment>
+    <fragment
+        android:id="@+id/markingHabit"
+        android:name="com.ddt.incubator.ui.fragments.markinghabit.MarkingHabit"
+        android:label="Mark your success"
+        tools:layout="@layout/fragment_marking_habit" >
+        <argument
+            android:name="selectedHabit"
+            app:argType="com.ddt.incubator.data.models.Habit" />
+        <action
+            android:id="@+id/action_markingHabit_to_habitList"
+            app:destination="@id/habitList"
+            app:exitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/action_markingHabit_to_updateHabitItem2"
+            app:destination="@id/updateHabitItem" />
+    </fragment>
+</navigation>

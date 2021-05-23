@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn_confirm_marking"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context="com.ddt.incubator.ui.fragments.createhabit.CreateHabitItem">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center|fill_vertical"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="210dp"
+            android:background="@drawable/rectangle"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_item_title_marking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/title_big"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/iv_habit_icon_marking"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/egg"
+                android:src="@drawable/ic_black_egg" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/chb_mark_success"
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rectangle"
+            android:text="@string/success"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rectangle"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:text="The remaining days">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:hint="@string/the_remaining_days"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_item_remainingDays"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="75dp"
+                android:background="@drawable/rectangle"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp"
+                tools:text="18" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_confirm_success_marking"
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#676C6B"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="Confirm"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

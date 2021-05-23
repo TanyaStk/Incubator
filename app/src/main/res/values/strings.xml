@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Incubator</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro_button_next">Next</string>
+    <string name="create_button">Create</string>
+    <string name="add_a_habit">Add a habit!</string>
+    <string name="add_button">add_button</string>
+    <string name="egg">egg</string>
+    <string name="title_big">Title Big</string>
+    <string name="success">Success</string>
+    <string name="the_remaining_days">The remaining days</string>
+    <string name="congratulations">Congratulations! You successfully incubate your new habit!</string>
+</resources>
