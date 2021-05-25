@@ -18,6 +18,7 @@
         app:cardCornerRadius="15dp">
 
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,16 +29,16 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_item_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
+                    android:layout_gravity="start"
                     android:text="@string/title_big"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"
@@ -47,18 +48,16 @@
                     android:id="@+id/tv_timeElapsed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
+                    android:layout_gravity="start"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp"
                     tools:text="12 days ago" />
 
                 <TextView
                     android:id="@+id/tv_item_description"
-                    android:layout_width="229dp"
-                    android:layout_height="58dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="70dp"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="start"
                     android:maxLines="4"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="14sp"
@@ -68,9 +67,8 @@
                     android:id="@+id/tv_item_createdTimeStamp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
+                    android:layout_gravity="start"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="70dp"
                     android:layout_marginBottom="10dp"
                     android:maxLines="2"
                     android:textColor="@color/colorPrimaryDark"
