@@ -17,21 +17,27 @@
         android:focusable="true"
         app:cardCornerRadius="15dp">
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@drawable/rectangle"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
+            <ImageView
+                android:id="@+id/iv_habit_icon"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/egg"
+                android:src="@drawable/ic_black_egg" />
 
             <LinearLayout
-                android:layout_width="220dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
+                android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <TextView
@@ -77,16 +83,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/iv_habit_icon"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:contentDescription="@string/egg"
-
-            android:src="@drawable/ic_black_egg" />
 
     </androidx.cardview.widget.CardView>
 

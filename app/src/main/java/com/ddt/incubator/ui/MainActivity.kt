@@ -1,16 +1,26 @@
 package com.ddt.incubator.ui
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.ddt.incubator.R
 import com.ddt.incubator.ui.introscreen.IntroActivity
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private var userFirstTime = true
+    private val CHANNEL_ID = "Habits notifications"
+    private val notificationId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +40,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         setupActionBarWithNavController(findNavController(R.id.navHostFragment))
+
+        createNotificationChannel()
+        sendNotification()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -52,4 +65,35 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "Incubator"
+            val descriptionText = "Notify about marking progress"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                description = descriptionText
+            }
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+
+    private fun sendNotification() {
+        val resultIntent = Intent(this, MainActivity::class.java)
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.mipmap.ic_launcher_round)
+            .setContentTitle("Incubator's waiting")
+            .setContentText("Don't forget about your eggs")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pendingIntent)
+            .setVibrate(LongArray(1))
+            .setAutoCancel(true)
+        with(NotificationManagerCompat.from(this)) {
+            notify(notificationId, builder.build())
+        }
+    }
 }
